@@ -32,7 +32,7 @@ make the usage of [Gatling](http://gatling.io/) as easy as
 
 #### Run a simple load test (Fixed RPS mode)
 
-```
+```bash
 docker run --rm scw1109/jet-gatling -r 5 -d 30 -u "https://google.com"
 ```
 
@@ -42,7 +42,7 @@ Note that no matter how long the response take, the tool will send 5 requests in
 
 #### Run a simple load test (Fixed concurrent mode)
 
-```
+```bash
 docker run --rm scw1109/jet-gatling -c 5 -d 30 -u "https://google.com"
 ```
 
@@ -56,7 +56,7 @@ Which acts more like [ab](https://httpd.apache.org/docs/2.4/programs/ab.html)
 Gatling report is generated under path ```/jet-gatling/results``` in the docker.
 To keep the report in host machine, we could use volume function of docker.
 
-```
+```bash
 docker run --rm -v /tmp/jet-gatling/results:/jet-gatling/results scw1109/jet-gatling -r 5 -d 30 -u "https://google.com"
 ```
 
@@ -69,7 +69,7 @@ For example, to provide multiple paths for the load testing.
 
 In order to provide the file to JetGatling, one should use volume to allow the docker runtime to see the file.
 
-```
+```bash
 docker run --rm -v /tmp/user-files:/jet-gatling/user-files -r 5 -d 30 -u "https://google.com" -p "/jet-gatling/path"
 ```
 
@@ -79,7 +79,7 @@ This command will read the path file under ```/tmp/jet-gatling/user-files```.
 
 For other parameters, use the following command to check the details.
 
-```
+```bash
 docker run --rm scw1109/jet-gatling -h
 ```
 
