@@ -2,7 +2,7 @@ FROM java:8-jdk-alpine
 
 MAINTAINER Alan She <scw1109@gmail.com>
 
-ENV JET_GATLING_VERSION 0.7
+ENV JET_GATLING_VERSION 0.8
 
 RUN mkdir -p /jet-gatling
 
